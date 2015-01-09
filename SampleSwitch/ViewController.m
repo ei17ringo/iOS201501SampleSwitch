@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSLog(@"%d",self.mySwitch.on);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +26,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)changeSwitch:(id)sender {
+    NSLog(@"Switch切り替わりました");
+    
+    if (!self.mySwitch.on) {
+        self.myLabel.text = @"SwitchはONです";
+    }else{
+        self.myLabel.text = @"SwitchはOFFです";
+    }
+}
 @end
